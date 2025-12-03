@@ -1,0 +1,328 @@
+/* General Body and Container Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Light background for the overall page */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #c0392b; /* Christmas Red */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+/* Livestream Section Styles */
+.livestream-section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.livestream-section h2 {
+    color: #c0392b; /* Christmas Red */
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 20px auto; /* Center the video */
+    border-radius: 5px;
+}
+
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.call-to-action {
+    font-size: 1.2em;
+    color: #34495e;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+/* 25 Days of Christmas Grid Section */
+.christmas-days-grid-section {
+    background-color: #6366F1; /* Requested background color */
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.christmas-days-grid-section h2 {
+    color: #ffffff;
+    margin-top: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.christmas-days-grid-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.christmas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out;
+    color: #333;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item h3 {
+    color: #c0392b; /* Christmas Red */
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.grid-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px 0;
+    border: 3px solid #6366F1;
+}
+
+.grid-item .username {
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.gift-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.option-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, opacity 0.3s ease;
+    flex: 1;
+}
+
+.money-option {
+    background-color: #27ae60; /* Green for money */
+    color: white;
+}
+
+.gift-option {
+    background-color: #f39c12; /* Orange for gift */
+    color: white;
+}
+
+/* --- INTERACTIVE STYLES --- */
+
+/* Style for the grid item once a choice has been made */
+.grid-item.submitted-day {
+    background-color: #ecf0f1; /* Light grey background for completed day */
+    box-shadow: none;
+}
+
+/* Style for the button that has been submitted */
+.option-btn.submitted {
+    background-color: #27ae60; /* Submitted green */
+    color: white;
+    border: 3px solid #1a1a1a;
+    pointer-events: none;
+    opacity: 1;
+    cursor: default;
+    /* Reset transform on submitted item */
+    transform: none; 
+}
+
+/* Fade out the non-submitted button */
+.gift-options .option-btn.faded {
+    opacity: 0.5;
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none;
+    cursor: default;
+    transform: none;
+}
+
+/* Ensure hover effects only apply before the selection is made */
+.money-option:not(.submitted):hover {
+    background-color: #2ecc71;
+    transform: translateY(-2px);
+}
+
+.gift-option:not(.submitted):hover {
+    background-color: #f1c40f;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* --- MODAL STYLES --- */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity (the backdrop) */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; 
+    max-width: 500px; 
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    animation: fadeIn 0.3s;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.modal-content h2 {
+    color: #c0392b;
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+.modal-content .submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-top: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .christmas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .christmas-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .gift-options {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+}
